@@ -1,0 +1,95 @@
+.header {
+  height: 100vh;
+  background-image: linear-gradient(
+      to bottom,
+      rgba($color-black, 0.5),
+      rgba($color-black, 0.5)
+    ),
+    url('../../img/scwheaderreverse.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  @include respond(phone) {
+    background-position: 60% 50%;
+  }
+
+  &__header {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 33%;
+    width: 50%;
+    margin: 0 auto;
+
+    @include respond(phone) {
+      width: 75%;
+    }
+
+    @include respond(small-phone) {
+      width: 100%;
+    }
+
+    &__image {
+      width: 75%;
+
+      @include respond(tab-portrait) {
+        width: 90%;
+      }
+    }
+
+    &--main {
+      font-size: 5rem;
+      color: $color-white;
+    }
+
+    &--sub {
+      font-size: 3rem;
+      color: $color-white;
+    }
+  }
+
+  &__information {
+    width: 100%;
+    height: 15rem;
+    display: flex;
+    // background: gray;
+    bottom: 0;
+    position: absolute;
+    padding: 2rem 4rem;
+
+    &--weekdays,
+    &--saturday,
+    &--sunday {
+      width: 18%;
+
+      @include respond(tab-portrait) {
+        width: 22%;
+      }
+
+      @include respond(phone) {
+        width: 30%;
+      }
+
+      @include respond(small-phone) {
+        width: 33%;
+        text-align: center;
+      }
+    }
+  }
+
+  &__text--days {
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.9rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+
+  &__text--time {
+    color: $color-white;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+}
